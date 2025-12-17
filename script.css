@@ -1,0 +1,19 @@
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  menuToggle.addEventListener('click', function () {
+    menuToggle.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link (optional UX improvement)
+  const mobileLinks = mobileNav.querySelectorAll('a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      mobileNav.classList.remove('active');
+    });
+  });
+});
